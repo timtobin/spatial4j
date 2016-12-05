@@ -36,7 +36,7 @@ public interface Bounds {
    *@param plane is the plane.
    *@param bounds are the membership bounds for points along the arc.
    */
-  public Bounds addPlane(final PlanetModel planetModel, final Plane plane, final Membership... bounds);
+  Bounds addPlane(final PlanetModel planetModel, final Plane plane, final Membership... bounds);
   
   /** Add a horizontal plane to the bounds description.
    * This method should EITHER use the supplied latitude, OR use the supplied
@@ -47,10 +47,10 @@ public interface Bounds {
    *@param bounds are the constraints on the plane.
    *@return updated Bounds object.
    */
-  public Bounds addHorizontalPlane(final PlanetModel planetModel,
-    final double latitude,
-    final Plane horizontalPlane,
-    final Membership... bounds);
+  Bounds addHorizontalPlane(final PlanetModel planetModel,
+                            final double latitude,
+                            final Plane horizontalPlane,
+                            final Membership... bounds);
     
   /** Add a vertical plane to the bounds description.
    * This method should EITHER use the supplied longitude, OR use the supplied
@@ -61,10 +61,10 @@ public interface Bounds {
    *@param bounds are the constraints on the plane.
    *@return updated Bounds object.
    */
-  public Bounds addVerticalPlane(final PlanetModel planetModel,
-    final double longitude,
-    final Plane verticalPlane,
-    final Membership... bounds);
+  Bounds addVerticalPlane(final PlanetModel planetModel,
+                          final double longitude,
+                          final Plane verticalPlane,
+                          final Membership... bounds);
 
   /** Add the intersection between two planes to the bounds description.
    * Where the shape has intersecting planes, it is better to use this method
@@ -75,57 +75,57 @@ public interface Bounds {
    *@param plane2 is the second plane.
    *@param bounds are the membership bounds for the intersection.
    */
-  public Bounds addIntersection(final PlanetModel planetModel, final Plane plane1, final Plane plane2, final Membership... bounds);
+  Bounds addIntersection(final PlanetModel planetModel, final Plane plane1, final Plane plane2, final Membership... bounds);
 
   /** Add a single point.
    *@param point is the point.
    *@return the updated Bounds object.
    */
-  public Bounds addPoint(final GeoPoint point);
+  Bounds addPoint(final GeoPoint point);
 
   /** Add an X value.
    *@param point is the point to take the x value from.
    *@return the updated object.
    */
-  public Bounds addXValue(final GeoPoint point);
+  Bounds addXValue(final GeoPoint point);
 
   /** Add a Y value.
    *@param point is the point to take the y value from.
    *@return the updated object.
    */
-  public Bounds addYValue(final GeoPoint point);
+  Bounds addYValue(final GeoPoint point);
 
   /** Add a Z value.
    *@param point is the point to take the z value from.
    *@return the updated object.
    */
-  public Bounds addZValue(final GeoPoint point);
+  Bounds addZValue(final GeoPoint point);
   
   /** Signal that the shape exceeds Math.PI in longitude.
    *@return the updated Bounds object.
    */
-  public Bounds isWide();
+  Bounds isWide();
   
   /** Signal that there is no longitude bound.
    *@return the updated Bounds object.
    */
-  public Bounds noLongitudeBound();
+  Bounds noLongitudeBound();
 
   /** Signal that there is no top latitude bound.
    *@return the updated Bounds object.
    */
-  public Bounds noTopLatitudeBound();
+  Bounds noTopLatitudeBound();
 
   /** Signal that there is no bottom latitude bound.
    *@return the updated Bounds object.
    */
-  public Bounds noBottomLatitudeBound();
+  Bounds noBottomLatitudeBound();
   
   /** Signal that there is no bound whatsoever.
    * The bound is limited only by the constraints of the
    * planet.
    *@return the updated Bounds object.,
    */
-  public Bounds noBound(final PlanetModel planetModel);
+  Bounds noBound(final PlanetModel planetModel);
   
 }

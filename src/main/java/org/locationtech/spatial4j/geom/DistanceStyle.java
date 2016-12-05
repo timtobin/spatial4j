@@ -27,22 +27,22 @@ public interface DistanceStyle {
   // convenient access to built-in styles:
 
   /** Arc distance calculator */
-  public static final ArcDistance ARC = ArcDistance.INSTANCE;
+  ArcDistance ARC = ArcDistance.INSTANCE;
   /** Linear distance calculator */
-  public static final LinearDistance LINEAR = LinearDistance.INSTANCE;
+  LinearDistance LINEAR = LinearDistance.INSTANCE;
   /** Linear distance squared calculator */
-  public static final LinearSquaredDistance LINEAR_SQUARED = LinearSquaredDistance.INSTANCE;
+  LinearSquaredDistance LINEAR_SQUARED = LinearSquaredDistance.INSTANCE;
   /** Normal distance calculator */
-  public static final NormalDistance NORMAL = NormalDistance.INSTANCE;
+  NormalDistance NORMAL = NormalDistance.INSTANCE;
   /** Normal distance squared calculator */
-  public static final NormalSquaredDistance NORMAL_SQUARED = NormalSquaredDistance.INSTANCE;
+  NormalSquaredDistance NORMAL_SQUARED = NormalSquaredDistance.INSTANCE;
 
   /** Compute the distance from a point to another point.
    * @param point1 Starting point
    * @param point2 Final point
    * @return the distance
    */
-  public default double computeDistance(final GeoPoint point1, final GeoPoint point2) {
+  default double computeDistance(final GeoPoint point1, final GeoPoint point2) {
     return computeDistance(point1, point2.x, point2.y, point2.z);
   }
   
@@ -53,7 +53,7 @@ public interface DistanceStyle {
    * @param z2 Final point z
    * @return the distance
    */
-  public double computeDistance(final GeoPoint point1, final double x2, final double y2, final double z2);
+  double computeDistance(final GeoPoint point1, final double x2, final double y2, final double z2);
 
   /** Compute the distance from a plane to a point.
    * @param planetModel The planet model
@@ -62,8 +62,8 @@ public interface DistanceStyle {
    * @param bounds are the plane bounds
    * @return the distance
    */
-  public default double computeDistance(final PlanetModel planetModel, final Plane plane, final GeoPoint point,
-                                        final Membership... bounds) {
+  default double computeDistance(final PlanetModel planetModel, final Plane plane, final GeoPoint point,
+                                 final Membership... bounds) {
     return computeDistance(planetModel, plane, point.x, point.y, point.z, bounds);
   }
   
@@ -76,7 +76,7 @@ public interface DistanceStyle {
    * @param bounds are the plane bounds
    * @return the distance
    */
-  public double computeDistance(final PlanetModel planetModel, final Plane plane, final double x, final double y, final double z, final Membership... bounds);
+  double computeDistance(final PlanetModel planetModel, final Plane plane, final double x, final double y, final double z, final Membership... bounds);
 
   // The following methods are used to go from a distance value back to something
   // that can be used to construct a constrained shape.
@@ -90,21 +90,21 @@ public interface DistanceStyle {
    * @param bounds are the constraints on where the point can be found.
    * @return zero, one, or two points at the proper distance from startPoint.
    */
-  public GeoPoint[] findDistancePoints(final PlanetModel planetModel, final double distanceValue, final GeoPoint startPoint, final Plane plane, final Membership... bounds);
+  GeoPoint[] findDistancePoints(final PlanetModel planetModel, final double distanceValue, final GeoPoint startPoint, final Plane plane, final Membership... bounds);
   
   /** Given a distance metric, find the minimum arc distance represented by that distance metric.
    * @param planetModel is the planet model.
    * @param distanceValue is the distance metric.
    * @return the minimum arc distance that that distance value can represent given the planet model.
    */
-  public double findMinimumArcDistance(final PlanetModel planetModel, final double distanceValue);
+  double findMinimumArcDistance(final PlanetModel planetModel, final double distanceValue);
   
   /** Given a distance metric, find the maximum arc distance represented by the distance metric.
    * @param planetModel is the planet model.
    * @param distanceValue is the distance metric.
    * @return the maximum arc distance that that distance value can represent given the planet model.
    */
-  public double findMaximumArcDistance(final PlanetModel planetModel, final double distanceValue);
+  double findMaximumArcDistance(final PlanetModel planetModel, final double distanceValue);
 
 }
 

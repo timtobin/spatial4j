@@ -28,13 +28,13 @@ public interface GeoSizeable {
    *
    * @return the radius.
    */
-  public double getRadius();
+  double getRadius();
 
   /**
    * Returns the center of a circle into which the area will be inscribed.
    *
    * @return the center.
    */
-  public GeoPoint getCenter();
+  GeoPoint getCenter();
 
 }

@@ -40,7 +40,7 @@ class GeoStandardPath extends GeoBasePath {
   protected final double cosAngle;
 
   /** The original list of path points */
-  protected final List<GeoPoint> points = new ArrayList<GeoPoint>();
+  protected final List<GeoPoint> points = new ArrayList<>();
   
   /** A list of SegmentEndpoints */
   protected List<SegmentEndpoint> endPoints;
@@ -588,7 +588,7 @@ class GeoStandardPath extends GeoBasePath {
     /** End point of the segment */
     public final GeoPoint end;
     /** Place to keep any complete segment distances we've calculated so far */
-    public final Map<DistanceStyle,Double> fullDistanceCache = new HashMap<DistanceStyle,Double>();
+    public final Map<DistanceStyle,Double> fullDistanceCache = new HashMap<>();
     /** Normalized plane connecting the two points and going through world center */
     public final Plane normalizedConnectingPlane;
     /** Cutoff plane parallel to connecting plane representing one side of the path segment */
@@ -686,10 +686,10 @@ class GeoStandardPath extends GeoBasePath {
       synchronized (fullDistanceCache) {
         Double dist = fullDistanceCache.get(distanceStyle);
         if (dist == null) {
-          dist = new Double(distanceStyle.computeDistance(start, end.x, end.y, end.z));
+          dist = distanceStyle.computeDistance(start, end.x, end.y, end.z);
           fullDistanceCache.put(distanceStyle, dist);
         }
-        return dist.doubleValue();
+        return dist;
       }
     }
   

@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class GeoCompositeMembershipShape implements GeoMembershipShape {
   /** The list of shapes. */
-  protected final List<GeoMembershipShape> shapes = new ArrayList<GeoMembershipShape>();
+  protected final List<GeoMembershipShape> shapes = new ArrayList<>();
 
   /** Constructor.
    */

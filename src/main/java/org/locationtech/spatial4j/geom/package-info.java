@@ -19,4 +19,4 @@
  * Shapes implemented using 3D planar geometry.  This package has no dependencies aside from Java.
  * This code was contributed under the name "Geo3D".
  */
-package org.apache.lucene.spatial3d.geom;
+package org.locationtech.spatial4j.geom;

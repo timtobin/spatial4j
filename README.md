@@ -1,6 +1,8 @@
 # Spatial4j
 
-This fork includes the spatial3D code from Apache Lucene. Spatial3D and this for require Java8.
+This fork includes the spatial3D code from Apache Lucene.
+
+This fork requires Java 8 as the spatial3D code requires it.
 
 [![Build](https://travis-ci.org/locationtech/spatial4j.svg)](https://travis-ci.org/locationtech/spatial4j)
 [![Coverage](https://img.shields.io/codecov/c/github/locationtech/spatial4j.svg)](https://codecov.io/github/locationtech/spatial4j/)

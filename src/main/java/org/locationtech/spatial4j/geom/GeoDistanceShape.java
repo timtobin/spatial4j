@@ -34,6 +34,6 @@ public interface GeoDistanceShape extends GeoMembershipShape, GeoDistance {
    * @param distanceValue is the distance metric to use.  It is presumed that the distance metric
    *  was produced with the same distance style as is provided to this method.
    */
-  public void getDistanceBounds(final Bounds bounds, final DistanceStyle distanceStyle, final double distanceValue);
+  void getDistanceBounds(final Bounds bounds, final DistanceStyle distanceStyle, final double distanceValue);
 
 }

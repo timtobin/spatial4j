@@ -35,7 +35,7 @@ public interface GeoOutsideDistance extends Membership {
    * @param point is the point to compute the distance to.
    * @return the distance.
    */
-  public default double computeOutsideDistance(final DistanceStyle distanceStyle, final GeoPoint point) {
+  default double computeOutsideDistance(final DistanceStyle distanceStyle, final GeoPoint point) {
     return computeOutsideDistance(distanceStyle, point.x, point.y, point.z);
   }
 
@@ -49,7 +49,7 @@ public interface GeoOutsideDistance extends Membership {
    * @param z is the point's unit z coordinate (using U.S. convention).
    * @return the distance.
    */
-  public double computeOutsideDistance(final DistanceStyle distanceStyle, final double x, final double y, final double z);
+  double computeOutsideDistance(final DistanceStyle distanceStyle, final double x, final double y, final double z);
 
 }
 

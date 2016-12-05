@@ -444,12 +444,12 @@ class GeoComplexPolygon extends GeoBasePolygon {
    * into the traversal method of a tree, and each edge that matches will cause this object to be
    * called.
    */
-  private static interface EdgeIterator {
+  private interface EdgeIterator {
     /**
      * @param edge is the edge that matched.
      * @return true if the iteration should continue, false otherwise.
      */
-    public boolean matches(final Edge edge);
+    boolean matches(final Edge edge);
   }
   
   /**

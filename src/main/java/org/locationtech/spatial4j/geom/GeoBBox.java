@@ -31,6 +31,6 @@ public interface GeoBBox extends GeoMembershipShape, GeoSizeable, GeoArea {
    * @param angle is the angle amount to expand the GeoBBox by.
    * @return a new GeoBBox.
    */
-  public GeoBBox expand(double angle);
+  GeoBBox expand(double angle);
 
 }

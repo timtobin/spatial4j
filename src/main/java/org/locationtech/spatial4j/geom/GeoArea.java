@@ -33,13 +33,13 @@ public interface GeoArea extends Membership {
   // Relationship values for "getRelationship()"
   
   /** The referenced shape CONTAINS this area */
-  public static final int CONTAINS = 0;
+  int CONTAINS = 0;
   /** The referenced shape IS WITHIN this area */
-  public static final int WITHIN = 1;
+  int WITHIN = 1;
   /** The referenced shape OVERLAPS this area */
-  public static final int OVERLAPS = 2;
+  int OVERLAPS = 2;
   /** The referenced shape has no relation to this area */
-  public static final int DISJOINT = 3;
+  int DISJOINT = 3;
 
   /**
    * Find the spatial relationship between a shape and the current geo area.
@@ -62,6 +62,6 @@ public interface GeoArea extends Membership {
    * @param shape is the shape to consider.
    * @return the relationship, from the perspective of the shape.
    */
-  public int getRelationship(GeoShape shape);
+  int getRelationship(GeoShape shape);
 }
 

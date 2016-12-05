@@ -31,7 +31,7 @@ public interface GeoShape extends Membership {
    * @return samples of all edge points from distinct edge sections.  Typically one point
    * is returned, but zero or two are also possible.
    */
-  public GeoPoint[] getEdgePoints();
+  GeoPoint[] getEdgePoints();
 
   /**
    * Assess whether a plane, within the provided bounds, intersects
@@ -50,7 +50,7 @@ public interface GeoShape extends Membership {
    *                      intersection must be within in order to qualify (provided by a GeoArea).
    * @return true if there's such an intersection, false if not.
    */
-  public boolean intersects(final Plane plane, final GeoPoint[] notablePoints, final Membership... bounds);
+  boolean intersects(final Plane plane, final GeoPoint[] notablePoints, final Membership... bounds);
 
   /**
    * Compute bounds for the shape.
@@ -58,6 +58,6 @@ public interface GeoShape extends Membership {
    * @param bounds is the input bounds object.
    *             The input object will be modified.
    */
-  public void getBounds(final Bounds bounds);
+  void getBounds(final Bounds bounds);
 
 }
